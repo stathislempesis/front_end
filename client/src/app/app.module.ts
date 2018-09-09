@@ -5,19 +5,42 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { HttpModule } from '@angular/http';
 import { TopPanelComponent } from './view_components/top-panel/top-panel.component';
-import { MatButtonModule, MatListModule, MatToolbarModule } from '@angular/material';
+import { MatListModule,MatIconModule, MatSidenavModule, MatToolbarModule,MatButtonModule } from '@angular/material';
+import { LeftSidePanelComponent } from './view_components/left-side-panel/left-side-panel.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    TopPanelComponent
+    TopPanelComponent,
+    LeftSidePanelComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpModule,
-	MatButtonModule, MatListModule, MatToolbarModule
+    HttpModule, MatListModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatButtonModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      {
+        path: 'comp1',
+        component: LeftSidePanelComponent
+      },
+      {
+        path: 'comp2',
+        component: LeftSidePanelComponent
+      },
+      {
+        path: '',
+        redirectTo: 'comp1',
+        pathMatch: 'full'
+      },
+      {
+        path: '**',
+        component: LeftSidePanelComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

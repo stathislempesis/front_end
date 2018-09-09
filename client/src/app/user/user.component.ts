@@ -32,7 +32,7 @@ export class UserComponent implements OnInit {
   }
   
   getUser() {
-    this.userService.findById(2).subscribe(
+    this.userService.findById(1).subscribe(
       user => {
         this.user = user;
       },

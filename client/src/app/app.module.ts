@@ -9,6 +9,7 @@ import { MatListModule,MatIconModule, MatSidenavModule, MatToolbarModule,MatButt
 import { LeftSidePanelComponent } from './view_components/left-side-panel/left-side-panel.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     HttpClientModule,
     HttpModule, MatListModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatButtonModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,ChartModule,
     RouterModule.forRoot([
       {
         path: 'comp1',

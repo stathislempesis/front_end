@@ -1,6 +1,4 @@
-package com.example.ui.Tweet.Entity;
-
-import com.example.ui.User.Entity.User;
+package com.example.ui.Entities;
 
 import javax.persistence.*;
 import java.util.Objects;

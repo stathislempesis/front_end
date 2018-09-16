@@ -1,6 +1,6 @@
-package com.example.ui.Tweet.Repository;
+package com.example.ui.Repositories;
 
-import com.example.ui.Tweet.Entity.Tweet;
+import com.example.ui.Entities.Tweet;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

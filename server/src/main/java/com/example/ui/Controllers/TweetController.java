@@ -1,7 +1,7 @@
-package com.example.ui.Tweet.Controller;
+package com.example.ui.Controllers;
 
-import com.example.ui.Tweet.Entity.Tweet;
-import com.example.ui.Tweet.Repository.TweetRepository;
+import com.example.ui.Entities.Tweet;
+import com.example.ui.Repositories.TweetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

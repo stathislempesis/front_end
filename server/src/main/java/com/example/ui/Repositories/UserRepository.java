@@ -1,6 +1,6 @@
-package com.example.ui.User.Repository;
+package com.example.ui.Repositories;
 
-import com.example.ui.User.Entity.User;
+import com.example.ui.Entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

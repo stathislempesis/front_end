@@ -1,8 +1,8 @@
-package com.example.ui.User.Controller;
+package com.example.ui.Controllers;
 
 import com.example.ui.Exception.ResourceNotFoundException;
-import com.example.ui.User.Entity.User;
-import com.example.ui.User.Repository.UserRepository;
+import com.example.ui.Entities.User;
+import com.example.ui.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

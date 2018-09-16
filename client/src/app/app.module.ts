@@ -10,13 +10,15 @@ import { LeftSidePanelComponent } from './view_components/left-side-panel/left-s
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ChartModule } from 'angular-highcharts';
+import { TweetComponent } from './tweet/tweet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     TopPanelComponent,
-    LeftSidePanelComponent
+    LeftSidePanelComponent,
+    TweetComponent
   ],
   imports: [
     BrowserModule,

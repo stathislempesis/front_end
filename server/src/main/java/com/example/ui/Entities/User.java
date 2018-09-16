@@ -1,4 +1,4 @@
-package com.example.ui.User.Entity;
+package com.example.ui.Entities;
 
 import javax.persistence.*;
 import java.util.Objects;

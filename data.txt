@@ -1,0 +1,4 @@
+marketPositisios = [
+{"date":"10-05-2012","close":68.55,"open":74.55},
+{"date":"09-05-2012","close":74.55,"open":69.55}
+];

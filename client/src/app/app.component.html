@@ -1,12 +1,5 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav mode="push" class="app-sidenav">
-    <mat-toolbar color="primary">
-      <!--future svg to go here-->
-      <span class="toolbar-filler"></span>
-      <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="!sidenav.opened">
-        <mat-icon aria-label="Menu" class="material-icons">close</mat-icon>
-      </button>
-    </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item class="sidenav-link" [routerLink]="['/comp1']" (click)="sidenav.toggle()">
         <mat-icon mat-list-icon>account_balance</mat-icon>
@@ -20,19 +13,16 @@
       </a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-toolbar id="appToolbar" color="primary">
-    <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="sidenav.opened">
-      <mat-icon aria-label="Menu" class="material-icons">menu</mat-icon>
-    </button>
-    <a>Twitter Analytics</a>
-    <span class="toolbar-filler"></span>
-    <input type="text" placeholder="Search..">
-    <span class="toolbar-filler"></span>
-    <app-user></app-user>
-    <span class="toolbar-filler"></span>
-    <img src="assets/Capture.PNG" width="30" height="30">
-    <button id="button-logout" mat-button>Log Out</button>
-  </mat-toolbar>
-  <div [chart]="chart"></div>
-  <router-outlet></router-outlet>
+  <div class="my-content">
+    <mat-toolbar id="appToolbar" color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="sidenav.opened">
+        <mat-icon aria-label="Menu" class="material-icons">menu</mat-icon>
+      </button>
+      <app-top-panel></app-top-panel>
+    </mat-toolbar>
+
+    <app-chart-example></app-chart-example>
+
+    <router-outlet></router-outlet>
+  </div>
 </mat-sidenav-container>

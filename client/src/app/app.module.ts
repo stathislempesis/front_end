@@ -9,8 +9,10 @@ import { MatListModule,MatIconModule, MatSidenavModule, MatToolbarModule,MatButt
 import { LeftSidePanelComponent } from './view_components/left-side-panel/left-side-panel.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { ChartModule } from 'angular-highcharts';
 import { TweetComponent } from './tweet/tweet.component';
+import { ChartExampleComponent } from './view_components/chart-example/chart-example.component';
+import { ChartsModule } from 'ng2-charts';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { TweetComponent } from './tweet/tweet.component';
     UserComponent,
     TopPanelComponent,
     LeftSidePanelComponent,
-    TweetComponent
+    TweetComponent,
+    ChartExampleComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule, MatListModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatButtonModule,
-    BrowserAnimationsModule,ChartModule,
+    BrowserAnimationsModule,ChartsModule, FlexLayoutModule,
     RouterModule.forRoot([
       {
         path: 'comp1',

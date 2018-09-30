@@ -1,8 +1,10 @@
-<mat-toolbar color="primary">
+<div class="container" fxLayout="row"  fxLayoutWrap fxLayoutGap="20%" fxLayoutAlign="right">
   <a>Twitter Analytics</a>
   <span class="toolbar-filler"></span>
-  <input type="text" placeholder="Search..">
+  <input matInput type="search" placeholder="Search..">
+  <span class="toolbar-filler"></span>
   <app-user></app-user>
   <span class="toolbar-filler"></span>
   <img src="assets/Capture.PNG" width="30" height="30">
-</mat-toolbar>
+  <button id="button-logout" mat-button>Log Out</button>
+</div>

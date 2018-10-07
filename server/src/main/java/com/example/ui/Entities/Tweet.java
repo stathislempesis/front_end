@@ -1,10 +1,10 @@
 package com.example.ui.Entities;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.Date;
 
 @Entity
-@Table(name = "tweets")
+@Table(name = "tweets1")
 public class Tweet {
 
     @Id
@@ -12,58 +12,46 @@ public class Tweet {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+   // @ManyToOne
+    @Column(name = "userID")
+    private Long userID;
 
-    @Column(name = "text")
-    private String text;
+    @Column(name = "statusID")
+    private Long statusID;
 
-    public Long getId() {
-        return id;
+    @Column(name = "date")
+    private Date date;
+
+    public Long getUserID() {
+        return userID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserID(Long userID) {
+        this.userID = userID;
     }
 
-    public User getUser() {
-        return user;
+    public Long getStatusID() {
+        return statusID;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setStatusID(Long statusID) {
+        this.statusID = statusID;
     }
 
-    public String getText() {
-        return text;
+    public Date getDate() {
+        return date;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Tweet tweet = (Tweet) o;
-        return Objects.equals(id, tweet.id) &&
-                Objects.equals(user, tweet.user) &&
-                Objects.equals(text, tweet.text);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, user, text);
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override
     public String toString() {
         return "Tweet{" +
-                "id=" + id +
-                ", user=" + user +
-                ", text='" + text + '\'' +
+                "userID=" + userID +
+                ", statusID=" + statusID +
+                ", date=" + date +
                 '}';
     }
 }

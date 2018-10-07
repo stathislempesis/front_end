@@ -15,10 +15,10 @@ public class TweetService
     @Autowired
     private TweetRepository tweetRepository;
 
-    @Transactional(readOnly=true)
+    /*@Transactional(readOnly=true)
     public Tweet findById(Long id)
     {
         return tweetRepository.findById(id).get();
-    }
+    }*/
 
 }

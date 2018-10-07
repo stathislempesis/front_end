@@ -23,16 +23,16 @@ public class TweetController
     private TweetService tweetService;
 
 
-    @GetMapping("/tweets/{id}")
+    /*@GetMapping("/tweets/{id}")
     public Tweet getTweetById(@PathVariable(value = "id") Long tweetId)
     {
         return tweetService.findById(tweetId);
-    }
+    }*/
 
-    @GetMapping("/users/{userId}/tweets")
-    public Page<Tweet> getAllCommentsByPostId(@PathVariable(value = "userId") Long userId, Pageable pageable)
+    @GetMapping("/users/{userID}/tweets")
+    public Page<Tweet> getAllTweetsByUserId(@PathVariable(value = "userID") Long userID, Pageable pageable)
     {
-        return tweetRepository.findByUserId(userId, pageable);
+        return tweetRepository.findByUserID(userID, pageable);
     }
 
 }

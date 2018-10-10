@@ -1,11 +1,17 @@
-import { Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Tweet } from "../../tweet/tweet";
+import { ChartExampleService } from "./chart-example.service";
 
 @Component({
   selector: 'app-chart-example',
   templateUrl: './chart-example.component.html',
   styleUrls: ['./chart-example.component.css']
 })
-export class ChartExampleComponent{
+export class ChartExampleComponent implements OnInit {
+
+private tweets: Tweet[];
+
+constructor(private chartExampleService: ChartExampleService) {}
 
 public chartOptions :any ={
       responsive: true,
@@ -20,6 +26,21 @@ public chartOptions :any ={
 
  public chartLabels :Array<any> = ['January', 'February', 'Mars', 'April'];
 
+ngOnInit() {
+    this.getTweets();
+  }
+
+getTweets() {
+    this.chartExampleService.findById(1034105453989572608).subscribe(
+      tweets => {
+        this.tweets = tweets;
+      },
+      err => {
+        console.log(err);
+      }
+
+    );
+  }
   /*onChartClick(event) {
     console.log(event);
   }*/

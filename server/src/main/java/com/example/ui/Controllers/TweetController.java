@@ -6,13 +6,14 @@ import com.example.ui.Services.TweetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RestController
+@RequestMapping
+@CrossOrigin(origins = "http://localhost:4200")
 public class TweetController
 {
 
@@ -29,10 +30,16 @@ public class TweetController
         return tweetService.findById(tweetId);
     }*/
 
-    @GetMapping("/users/{userID}/tweets")
+    /*@GetMapping("/users/{userID}/tweets")
     public Page<Tweet> getAllTweetsByUserId(@PathVariable(value = "userID") Long userID, Pageable pageable)
     {
         return tweetRepository.findByUserID(userID, pageable);
+    }*/
+
+    @GetMapping("/users/{userID}/tweets")
+    public List<Object> getAllTweetsByUserId(@PathVariable(value = "userID") Long userID)
+    {
+        return tweetRepository.countByDateUserID(userID);
     }
 
 }

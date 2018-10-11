@@ -19,5 +19,5 @@ public interface TweetRepository extends JpaRepository<Tweet, Long>
     Page<Tweet> findByUserID(Long userID, Pageable pageable);
 
     @Query("SELECT t.date, count(t.statusID) FROM Tweet t where t.userID = ?1 group by t.date order by date")
-    List<Object> countByDateUserID(@Param("userID") Long userID);
+    List<Tweet> countByDateUserID(@Param("userID") Long userID);
 }

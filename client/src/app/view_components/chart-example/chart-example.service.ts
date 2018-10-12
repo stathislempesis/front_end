@@ -13,7 +13,8 @@ export class ChartExampleService {
   constructor(private http: Http) { }
 
   findById(id: number): Observable<any> {
-    const url = `${this.apiUrl}/${id}/tweets`;
+    /*const url = `${this.apiUrl}/${id}/tweets`;*/
+     const url = `${this.apiUrl}/1034105453989572608/tweets`;
     return this.http.get(url)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));

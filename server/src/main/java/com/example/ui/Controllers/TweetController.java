@@ -37,7 +37,7 @@ public class TweetController
     }*/
 
     @GetMapping("/users/{userID}/tweets")
-    public List<Tweet> getAllTweetsByUserId(@PathVariable(value = "userID") Long userID)
+    public List<Object> getAllTweetsByUserId(@PathVariable(value = "userID") Long userID)
     {
         return tweetRepository.countByDateUserID(userID);
     }

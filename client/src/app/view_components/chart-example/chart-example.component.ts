@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Tweet } from "../../tweet/tweet";
 import { ChartExampleService } from "./chart-example.service";
+import {formatDate} from '@angular/common'
 
 @Component({
   selector: 'app-chart-example',
@@ -18,12 +18,7 @@ public chartOptions :any ={
     maintainAspectRatio: false
     };
 
-public chartData : { label: string, data: Array<any> }[] = [
-        {
-            label: "Quantities",
-            data: Array<any>()
-        }
-    ];
+public chartData : { label: string, data: Array<any> }[] = [];
 
   /*public chartData :Array<any> = [
       { data: [330, 600, 260, 700], label: 'Account A' },
@@ -46,11 +41,11 @@ getTweets() {
         arr = [];
         for (let stat of tweets) {
              arr.push(stat[1]);
-             this.chartLabels.push(stat[0]);
+             this.chartLabels.push(formatDate(new Date(stat[0]), 'longDate', 'en'));
        }
 
        this.chartData.push({
-                    label: 'title',
+                    label: "Number of tweets",
                     data: arr
                 });
       },

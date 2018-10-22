@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Tweet } from "../../tweet/tweet";
+//import { Tweet } from "../../tweet/tweet";
 import { Observable } from "rxjs/Observable";
 import { Http, Response } from "@angular/http";
 

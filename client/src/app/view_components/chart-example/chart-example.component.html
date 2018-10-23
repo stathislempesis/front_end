@@ -1,4 +1,4 @@
-<div class="chart-container">
+<div style="display: block" *ngIf="chartData.length > 0" class="chart-container">
   <canvas
     baseChart height="500" width="10"
     [chartType]="'line'"

@@ -18,7 +18,13 @@ public chartOptions :any ={
     maintainAspectRatio: false
     };
 
-public chartData : { label: string, data: Array<any> }[] = [];
+public chartDataTweets : { label: string, data: Array<any> }[] = [];
+public chartDataRetweets : { label: string, data: Array<any> }[] = [];
+public chartDataRetweeters : { label: string, data: Array<any> }[] = [];
+
+public chartLabelsTweets :Array<any> = [];
+public chartLabelsRetweets :Array<any> = [];
+public chartLabelsRetweeters :Array<any> = [];
 
   /*public chartData :Array<any> = [
       { data: [330, 600, 260, 700], label: 'Account A' },
@@ -26,26 +32,74 @@ public chartData : { label: string, data: Array<any> }[] = [];
       { data: [45, 67, 800, 500], label: 'Account C' }
     ];*/
 
- public chartLabels :Array<any> = [];
-
-ngOnInit() {
-    this.getTweets();
+  ngOnInit() {
+    this.getTweetsData();
+    this.getRetweetsData();
+    this.getRetweetersData();
   }
 
-getTweets() {
-    this.chartExampleService.findById(1034105453989572608).subscribe(
-      tweets => {
+  getTweetsData() {
+    this.chartExampleService.findTweetsById(1034105453989572608).subscribe(
+      data => {
         //this.tweets = tweets;
 
         let arr: any[];
         arr = [];
-        for (let stat of tweets) {
+        for (let stat of data) {
              arr.push(stat[1]);
-             this.chartLabels.push(formatDate(new Date(stat[0]), 'longDate', 'en'));
+             this.chartLabelsTweets.push(formatDate(new Date(stat[0]), 'longDate', 'en'));
        }
 
-       this.chartData.push({
+       this.chartDataTweets.push({
                     label: "Number of tweets",
+                    data: arr
+                });
+      },
+      err => {
+        console.log(err);
+      }
+
+    );
+  }
+
+  getRetweetsData() {
+    this.chartExampleService.findRetweetsById(1034105453989572608).subscribe(
+      data => {
+        //this.tweets = tweets;
+
+        let arr: any[];
+        arr = [];
+        for (let stat of data) {
+             arr.push(stat[1]);
+             this.chartLabelsRetweets.push(formatDate(new Date(stat[0]), 'longDate', 'en'));
+       }
+
+       this.chartDataRetweets.push({
+                    label: "Number of retweets",
+                    data: arr
+                });
+      },
+      err => {
+        console.log(err);
+      }
+
+    );
+  }
+
+  getRetweetersData() {
+    this.chartExampleService.findRetweetersById(1034105453989572608).subscribe(
+      data => {
+        //this.tweets = tweets;
+
+        let arr: any[];
+        arr = [];
+        for (let stat of data) {
+             arr.push(stat[1]);
+             this.chartLabelsRetweeters.push(formatDate(new Date(stat[0]), 'longDate', 'en'));
+       }
+
+       this.chartDataRetweeters.push({
+                    label: "Number of retweeters",
                     data: arr
                 });
       },

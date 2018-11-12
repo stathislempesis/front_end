@@ -3,45 +3,45 @@
      fxLayoutGap="32px"
      fxLayoutAlign="flex-start">
 
-  <div *ngIf="chartData.length > 0" fxFlex="0 1 calc(49% - 32px)">
+  <div *ngIf="chartDataTweets.length > 0" fxFlex="0 1 calc(49% - 32px)">
     <canvas
       baseChart height="500" width="10"
       [chartType]="'line'"
-      [datasets]="chartData"
-      [labels]="chartLabels"
+      [datasets]="chartDataTweets"
+      [labels]="chartLabelsTweets"
       [options]="chartOptions"
       [legend]="true"
       (chartClick)="onChartClick($event)">
     </canvas>
   </div>
-  <div *ngIf="chartData.length > 0" fxFlex="0 1 calc(49% - 32px)">
+  <div *ngIf="chartDataRetweets.length > 0" fxFlex="0 1 calc(49% - 32px)">
     <canvas
       baseChart height="500" width="10"
       [chartType]="'line'"
-      [datasets]="chartData"
-      [labels]="chartLabels"
+      [datasets]="chartDataRetweets"
+      [labels]="chartLabelsRetweets"
       [options]="chartOptions"
       [legend]="true"
       (chartClick)="onChartClick($event)">
     </canvas>
   </div>
-  <div *ngIf="chartData.length > 0" fxFlex="0 1 calc(49% - 32px)">
+  <div *ngIf="chartDataRetweeters.length > 0" fxFlex="0 1 calc(49% - 32px)">
     <canvas
       baseChart height="500" width="10"
       [chartType]="'line'"
-      [datasets]="chartData"
-      [labels]="chartLabels"
+      [datasets]="chartDataRetweeters"
+      [labels]="chartLabelsRetweeters"
       [options]="chartOptions"
       [legend]="true"
       (chartClick)="onChartClick($event)">
     </canvas>
   </div>
-  <div *ngIf="chartData.length > 0" fxFlex="0 1 calc(49% - 32px)">
+  <div *ngIf="chartDataTweets.length > 0" fxFlex="0 1 calc(49% - 32px)">
     <canvas
       baseChart height="500" width="10"
       [chartType]="'line'"
-      [datasets]="chartData"
-      [labels]="chartLabels"
+      [datasets]="chartDataTweets"
+      [labels]="chartLabelsTweets"
       [options]="chartOptions"
       [legend]="true"
       (chartClick)="onChartClick($event)">

@@ -3,8 +3,10 @@ package com.example.ui.Entities;
 import javax.persistence.*;
 import java.util.Date;
 
+// It needs user ID
+
 @Entity
-@Table(name = "tweets1")
+@Table(name = "tweets")
 public class Tweet {
 
     @Id
@@ -12,46 +14,22 @@ public class Tweet {
     @Column(name = "id")
     private Long id;
 
-   // @ManyToOne
-    @Column(name = "userID")
-    private Long userID;
+    @Column(name = "created_at")
+    private Date created_at;
 
-    @Column(name = "statusID")
-    private Long statusID;
+    @Column(name = "updated_at")
+    private Date updated_at;
 
-    @Column(name = "date")
-    private Date date;
+    @Column(name = "clean_text", length = 1024)
+    private String clean_text;
 
-    public Long getUserID() {
-        return userID;
-    }
+    @Column(name = "text", length = 1024)
+    private String text;
 
-    public void setUserID(Long userID) {
-        this.userID = userID;
-    }
+    @Column(name = "timestamp")
+    private Date timestamp;
 
-    public Long getStatusID() {
-        return statusID;
-    }
+    @Column(name = "twitter_id")
+    private Long twitter_id;
 
-    public void setStatusID(Long statusID) {
-        this.statusID = statusID;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    @Override
-    public String toString() {
-        return "Tweet{" +
-                "userID=" + userID +
-                ", statusID=" + statusID +
-                ", date=" + date +
-                '}';
-    }
 }

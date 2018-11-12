@@ -17,11 +17,11 @@ import java.util.List;
 public class TweetController
 {
 
-    @Autowired
-    private TweetRepository tweetRepository;
+    //@Autowired
+    //private TweetRepository tweetRepository;
 
-    @Autowired
-    private TweetService tweetService;
+    //@Autowired
+    //private TweetService tweetService;
 
 
     /*@GetMapping("/tweets/{id}")
@@ -36,10 +36,11 @@ public class TweetController
         return tweetRepository.findByUserID(userID, pageable);
     }*/
 
+    /*
     @GetMapping("/users/{userID}/tweets")
     public List<Object> getAllTweetsByUserId(@PathVariable(value = "userID") Long userID)
     {
         return tweetRepository.countByDateUserID(userID);
     }
-
+    */
 }

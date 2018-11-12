@@ -1,22 +1,20 @@
 package com.example.ui.Entities;
 
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "trends")
-public class Trend
+@Table(name = "hashtags")
+public class Hashtag
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true, length = 50)
     private String name;
-
-    @Column(name = "query")
-    private String query;
 
     @Column(name = "created_at")
     private Date created_at;
@@ -27,7 +25,7 @@ public class Trend
 
     public Long getId()
     {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id)
@@ -43,16 +41,6 @@ public class Trend
     public void setName(String name)
     {
         this.name = name;
-    }
-
-    public String getQuery()
-    {
-        return this.query;
-    }
-
-    public void setQuery(String query)
-    {
-        this.query = query;
     }
 
     public Date getCreated_at()
@@ -79,10 +67,9 @@ public class Trend
     @Override
     public String toString()
     {
-        return "Trend{" +
+        return "Hashtag{" +
                 "id=" + this.id +
                 ", name=" + this.name +
-                ", query=" + this.query +
                 ", created_at=" + this.created_at +
                 ", updated_at=" + this.updated_at +
                 '}';

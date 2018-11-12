@@ -1,13 +1,11 @@
 package com.example.ui.Controllers;
 
 
-import com.example.ui.Entities.Trend;
+import com.example.ui.Entities.Hashtag;
+import com.example.ui.Entities.TrendSentiment;
+import com.example.ui.Entities.Tweet;
 import com.example.ui.Services.TrendService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import static org.springframework.web.bind.annotation.RequestMethod.*;
-import org.springframework.web.bind.annotation.RequestMapping.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,12 +13,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@Controller
+@RestController
 public class TrendController
 {
 
-    //@Autowired
-    //private TrendService trendService;
+    @Autowired
+    private TrendService trendService;
+
+
+    @GetMapping("/trends/{id}/sentiment")
+    public List<TrendSentiment> trendSentiment(@PathVariable Long id)
+    {
+        return trendService.trendSentiment(id);
+    }
+
+
+    @GetMapping("/trends/{id}/hashtags")
+    public List<Hashtag> hastags(@PathVariable Long id)
+    {
+        return trendService.hashtags(id);
+    }
+
+
+    @GetMapping("/trends/{id}/tweets")
+    public List<Tweet> tweets(@PathVariable Long id)
+    {
+        return trendService.tweets(id);
+    }
 
 
     /*

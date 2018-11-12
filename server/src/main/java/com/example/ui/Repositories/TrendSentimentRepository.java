@@ -1,7 +1,7 @@
 package com.example.ui.Repositories;
 
 
-import com.example.ui.Entities.Trend;
+import com.example.ui.Entities.TrendSentiment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,10 +11,10 @@ import java.util.List;
 
 
 @Repository
-public interface TrendRepository extends JpaRepository<Trend, Long>
+public interface TrendSentimentRepository extends JpaRepository<TrendSentiment, Long>
 {
 
-    @Query(value="FROM Trend trend WHERE trend.id IN (:ids)")
-    List<Trend> allByIds(@Param("ids") List<Long> ids);
+    @Query("SELECT ts FROM TrendSentiment ts WHERE ts.trend_id = :trend_id")
+    List<TrendSentiment> allByTrendId(@Param("trend_id") Long trend_id);
 
 }

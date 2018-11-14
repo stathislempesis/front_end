@@ -19,6 +19,6 @@ public interface TweetRepository extends JpaRepository<Tweet, Long>
     //Page<Tweet> findByUserID(Long userID, Pageable pageable);
 
     //@Query("SELECT t.timestamp, count(t.twitter_id) FROM Tweet t where t.userID = ?1 group by t.timestamp order by timestamp")
-    @Query("SELECT DATE(t.timestamp), count(t.twitter_id) FROM Tweet t group by DATE(t.timestamp) order by DATE(t.timestamp)")
+    @Query("SELECT DATE(t.timestamp), count(t.twitter_id) FROM Tweet t where retweetFlag=0 group by DATE(t.timestamp) order by DATE(t.timestamp)")
     List<Object> countByDateUserID(@Param("userID") Long userID);
 }

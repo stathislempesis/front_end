@@ -12,6 +12,7 @@ import { ChartExampleComponent } from './view_components/chart-example/chart-exa
 import { ChartsModule } from 'ng2-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
+import { MainPageComponent } from './view_components/main_page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     UserComponent,
     TopPanelComponent,
     LeftSidePanelComponent,
-    ChartExampleComponent
+    ChartExampleComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

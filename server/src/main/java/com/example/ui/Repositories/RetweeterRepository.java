@@ -4,9 +4,11 @@ import com.example.ui.Entities.Retweeter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface RetweeterRepository extends JpaRepository<Retweeter, Long> {
 
     // It needs retweeted_user_id argument

@@ -36,12 +36,12 @@
       (chartClick)="onChartClick($event)">
     </canvas>
   </div>
-  <div *ngIf="chartDataTweets.length > 0" fxFlex="0 1 calc(49% - 32px)">
+  <div *ngIf="chartDataReplies.length > 0" fxFlex="0 1 calc(49% - 32px)">
     <canvas
       baseChart height="500" width="10"
       [chartType]="'line'"
-      [datasets]="chartDataTweets"
-      [labels]="chartLabelsTweets"
+      [datasets]="chartDataReplies"
+      [labels]="chartLabelsReplies"
       [options]="chartOptions"
       [legend]="true"
       (chartClick)="onChartClick($event)">

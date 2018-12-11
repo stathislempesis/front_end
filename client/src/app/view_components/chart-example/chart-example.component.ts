@@ -21,10 +21,12 @@ public chartOptions :any ={
 public chartDataTweets : { label: string, data: Array<any> }[] = [];
 public chartDataRetweets : { label: string, data: Array<any> }[] = [];
 public chartDataRetweeters : { label: string, data: Array<any> }[] = [];
+public chartDataReplies : { label: string, data: Array<any> }[] = [];
 
 public chartLabelsTweets :Array<any> = [];
 public chartLabelsRetweets :Array<any> = [];
 public chartLabelsRetweeters :Array<any> = [];
+public chartLabelsReplies :Array<any> = [];
 
   /*public chartData :Array<any> = [
       { data: [330, 600, 260, 700], label: 'Account A' },
@@ -36,6 +38,7 @@ public chartLabelsRetweeters :Array<any> = [];
     this.getTweetsData();
     this.getRetweetsData();
     this.getRetweetersData();
+    this.getRepliesData();
   }
 
   getTweetsData() {
@@ -100,6 +103,30 @@ public chartLabelsRetweeters :Array<any> = [];
 
        this.chartDataRetweeters.push({
                     label: "Number of retweeters",
+                    data: arr
+                });
+      },
+      err => {
+        console.log(err);
+      }
+
+    );
+  }
+
+  getRepliesData() {
+    this.chartExampleService.findRepliesById(1034105453989572608).subscribe(
+      data => {
+        //this.tweets = tweets;
+
+        let arr: any[];
+        arr = [];
+        for (let stat of data) {
+             arr.push(stat[1]);
+             this.chartLabelsReplies.push(formatDate(new Date(stat[0]), 'longDate', 'en'));
+       }
+
+       this.chartDataReplies.push({
+                    label: "Number of replies",
                     data: arr
                 });
       },

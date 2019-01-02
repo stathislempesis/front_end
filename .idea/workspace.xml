@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168f4fb7-59b8-4a78-b81e-a8daa024b9c3" name="Default" comment="Routing completed">
+    <list default="true" id="168f4fb7-59b8-4a78-b81e-a8daa024b9c3" name="Default" comment="Returns tuples retweeter x retweeted user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/ui/Controllers/HubRetweeterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/ui/Repositories/HubRetweeterRepository.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/../" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +15,7 @@
     <session id="-1515363083">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="40" />
+          <entry key="project.closed" value="41" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.102" value="1" />
           <entry key="project.open.time.11" value="1" />
@@ -89,14 +87,14 @@
           <entry key="java" value="647" />
           <entry key="properties" value="7" />
           <entry key="ts" value="678" />
-          <entry key="txt" value="536" />
+          <entry key="txt" value="579" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="157" />
           <entry key="JAVA" value="647" />
-          <entry key="PLAIN_TEXT" value="536" />
+          <entry key="PLAIN_TEXT" value="579" />
           <entry key="Properties" value="7" />
           <entry key="TypoScript File" value="678" />
         </counts>
@@ -105,7 +103,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/example/ui/Controllers/UpdateHubRetweetersTree.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
@@ -117,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/example/ui/Repositories/RetweeterRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
+            <state relative-caret-position="146">
               <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -524,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542057561282</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Returns tuples retweeter x retweeted user">
+      <created>1546457643329</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1546457643329</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -532,7 +537,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.46666667" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -544,15 +548,15 @@
       <window_info id="DB Browser" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.86439395" visible="true" weight="0.41396105" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.86439395" weight="0.41396105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="SBT Console" order="7" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.5969697" weight="0.34253246" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.13560607" side_tool="true" visible="true" weight="0.41396105" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.59621215" visible="true" weight="0.6217533" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.40378788" side_tool="true" visible="true" weight="0.6217533" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4969697" weight="0.2792208" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49772727" weight="0.31655845" />
@@ -620,7 +624,8 @@
     <MESSAGE value="Routing completed" />
     <MESSAGE value="Flexlayout for charts" />
     <MESSAGE value="Plots for tweets, retweets and retweeters are added.&#10;&#10;tweets including RT should be removed from tweets plot." />
-    <option name="LAST_COMMIT_MESSAGE" value="Plots for tweets, retweets and retweeters are added.&#10;&#10;tweets including RT should be removed from tweets plot." />
+    <MESSAGE value="Returns tuples retweeter x retweeted user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Returns tuples retweeter x retweeted user" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -917,20 +922,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/example/ui/Repositories/RetweeterRepository.java">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/example/ui/Controllers/UpdateHubRetweetersTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="43" />
+        <state relative-caret-position="207">
+          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/example/ui/Controllers/UpdateHubRetweetersTree.java">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/example/ui/Repositories/RetweeterRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        <state relative-caret-position="146">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

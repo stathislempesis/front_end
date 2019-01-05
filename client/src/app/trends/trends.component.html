@@ -1,0 +1,15 @@
+<div class="navbar navbar-inverse bg-inverse">
+  <a class="navbar-brand">TRENDS</a>
+</div>
+
+<div class="col-xs-9 bg-success p-a-1">
+  {{trends().length}} Trends
+</div>
+
+<div class="col-xs-9 p-a-1">
+  <div *ngFor="let trend of trends()" class="card card-outline-primary">
+    <h4 class="card-header">
+      {{trend.name}}
+    </h4>
+  </div>
+</div>

@@ -6,6 +6,8 @@ import java.sql.Timestamp;
 
 
 
+// It needs user ID
+
 @Entity
 @Table(name = "tweets")
 public class Tweet
@@ -15,6 +17,7 @@ public class Tweet
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
 
     @Column(name = "twitter_id", unique = true)
     private Long twitter_id;
@@ -133,4 +136,5 @@ public class Tweet
                 ", userID=" + this.userID +
                 '}';
     }
+
 }

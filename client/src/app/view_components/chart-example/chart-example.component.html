@@ -1,11 +1,50 @@
-<div class="chart-container">
-  <canvas
-    baseChart height="500" width="10"
-    [chartType]="'line'"
-    [datasets]="chartData"
-    [labels]="chartLabels"
-    [options]="chartOptions"
-    [legend]="true"
-    (chartClick)="onChartClick($event)">
-  </canvas>
+<div fxLayout="row wrap"
+     fxLayout.lt-sm="column"
+     fxLayoutGap="32px"
+     fxLayoutAlign="flex-start">
+
+  <div *ngIf="chartDataTweets.length > 0" fxFlex="0 1 calc(49% - 32px)">
+    <canvas
+      baseChart height="500" width="10"
+      [chartType]="'line'"
+      [datasets]="chartDataTweets"
+      [labels]="chartLabelsTweets"
+      [options]="chartOptions"
+      [legend]="true"
+      (chartClick)="onChartClick($event)">
+    </canvas>
+  </div>
+  <div *ngIf="chartDataRetweets.length > 0" fxFlex="0 1 calc(49% - 32px)">
+    <canvas
+      baseChart height="500" width="10"
+      [chartType]="'line'"
+      [datasets]="chartDataRetweets"
+      [labels]="chartLabelsRetweets"
+      [options]="chartOptions"
+      [legend]="true"
+      (chartClick)="onChartClick($event)">
+    </canvas>
+  </div>
+  <div *ngIf="chartDataRetweeters.length > 0" fxFlex="0 1 calc(49% - 32px)">
+    <canvas
+      baseChart height="500" width="10"
+      [chartType]="'line'"
+      [datasets]="chartDataRetweeters"
+      [labels]="chartLabelsRetweeters"
+      [options]="chartOptions"
+      [legend]="true"
+      (chartClick)="onChartClick($event)">
+    </canvas>
+  </div>
+  <div *ngIf="chartDataReplies.length > 0" fxFlex="0 1 calc(49% - 32px)">
+    <canvas
+      baseChart height="500" width="10"
+      [chartType]="'line'"
+      [datasets]="chartDataReplies"
+      [labels]="chartLabelsReplies"
+      [options]="chartOptions"
+      [legend]="true"
+      (chartClick)="onChartClick($event)">
+    </canvas>
+  </div>
 </div>

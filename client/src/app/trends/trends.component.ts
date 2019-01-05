@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { Trend } from "../models/trend/trend.model";
-
 import { TrendsRepository } from "../models/trend/trends.repository";
 
 
 @Component({
   selector: "trends",
-  templateUrl: "trends.component.html"
+  templateUrl: "trends.component.html",
+  styleUrls: ["trends.component.css"]
 })
 
 export class TrendsComponent{

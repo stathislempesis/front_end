@@ -11,6 +11,11 @@
         <span class="title" mat-line>Timeline</span>
         <!--span mat-line class="secondary">test</span-->
       </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/trends']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>trending_up</mat-icon>
+        <span class="title" mat-line>Trends</span>
+        <!--span mat-line class="secondary">test</span-->
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <div class="my-content">

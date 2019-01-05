@@ -39,4 +39,15 @@ public class TrendListController
     {
         return trendsListService.trends(id);
     }
+
+
+    @GetMapping("/trendsLists_current/trends")
+    public List<Trend> currentTrends()
+    {
+        TrendsList currentTrendsList = trendsListService.recent(1).get(0);
+
+        return trendsListService.trends( currentTrendsList.getId() );
+    }
+
+
 }

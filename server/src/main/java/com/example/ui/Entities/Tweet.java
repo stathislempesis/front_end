@@ -32,4 +32,7 @@ public class Tweet {
     @Column(name = "twitter_id")
     private Long twitter_id;
 
+    @Column(name = "retweet_flag")
+    private Boolean retweet_flag;
+
 }

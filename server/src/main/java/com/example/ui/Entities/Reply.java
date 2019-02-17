@@ -18,15 +18,15 @@ public class Reply {
     @Column(name = "updated_at")
     private Date updated_at;
 
-    @Column(name = "repliedTweetId")
-    private Long repliedTweetId;
+    @Column(name = "replied_tweet_id")
+    private Long replied_tweet_id;
 
-    @Column(name = "replyId")
-    private Long replyId;
+    @Column(name = "reply_id")
+    private Long reply_id;
 
     @Column(name = "timestamp")
     private Date timestamp;
 
-    @Column(name = "userIdOfRepliedTweet")
-    private Long userIdOfRepliedTweet;
+    @Column(name = "user_id_of_replied_tweet")
+    private Long user_id_of_replied_tweet;
 }

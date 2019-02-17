@@ -42,4 +42,10 @@ public class TweetController
         return tweetRepository.countByDateUserID(userID);
     }
 
+    @GetMapping("/users/{userID}/tweetsWithReplies")
+    public List<Object> getAllTweetsRepliesByUserId(@PathVariable(value = "userID") Long userID)
+    {
+        return tweetRepository.countByDateUserID2(userID);
+    }
+
 }

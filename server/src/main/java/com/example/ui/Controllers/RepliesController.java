@@ -15,8 +15,14 @@ public class RepliesController {
     private ReplyRepository replyRepository;
 
     @GetMapping("/users/{userId}/replies")
-    public List<Object> getAllRepliesByUserId(@PathVariable(value = "userId") Long userId)
+    public List<Object> getAllRepliesByUserId()
     {
-        return replyRepository.countRepliesByDate(userId);
+        return replyRepository.countRepliesByDate();
+    }
+
+    @GetMapping("/users/{userId}/{arr_dates}/replies")
+    public List<Object> getAllRepliesByUserIdDates(@PathVariable(value = "arr_dates") List<Object> arr_dates)
+    {
+        return replyRepository.countRepliesInDatesByDate(arr_dates);
     }
 }

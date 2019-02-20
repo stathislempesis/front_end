@@ -48,4 +48,11 @@ public class TweetController
         return tweetRepository.countByDateUserID2(userID);
     }
 
+    @GetMapping("/users/{userId}/{dateRangeStart}/{dateRangeEnd}/tweetsWithReplies")
+    public List<Object> getAllTweetsRepliesByUserId2(@PathVariable(value = "dateRangeStart") Object dateRangeStart,
+                                                     @PathVariable(value = "dateRangeEnd") Object dateRangeEnd)
+    {
+        return tweetRepository.countByDateUserID3(dateRangeStart, dateRangeEnd);
+    }
+
 }

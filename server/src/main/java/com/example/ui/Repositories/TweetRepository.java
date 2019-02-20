@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,4 +25,8 @@ public interface TweetRepository extends JpaRepository<Tweet, Long>
 
     @Query("SELECT DATE(t.timestamp), count(t.twitter_id), count(m.reply_id) FROM Tweet t left join Reply m on t.id = m.replied_tweet_id where t.retweet_flag=0 group by DATE(t.timestamp) order by DATE(t.timestamp)")
     List<Object> countByDateUserID2(@Param("userID") Long userID);
+
+    @Query("SELECT count(DISTINCT t.twitter_id), count(DISTINCT m.replied_tweet_id) FROM Tweet t left join Reply m on t.id = m.replied_tweet_id where t.retweet_flag=0 and DATE(t.timestamp) BETWEEN DATE(?1) and DATE(?2)")
+    List<Object> countByDateUserID3(@PathVariable(value = "dateRangeStart") Object dateRangeStart,
+                                    @PathVariable(value = "dateRangeEnd") Object dateRangeEnd);
 }
